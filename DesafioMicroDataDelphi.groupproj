@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C7A9CF66-7142-487C-A4A0-FC37635E7C22}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DesafioMicroData.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\Servidor\API.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DesafioMicroData">
+        <MSBuild Projects="DesafioMicroData.dproj"/>
+    </Target>
+    <Target Name="DesafioMicroData:Clean">
+        <MSBuild Projects="DesafioMicroData.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DesafioMicroData:Make">
+        <MSBuild Projects="DesafioMicroData.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="API">
+        <MSBuild Projects="src\Servidor\API.dproj"/>
+    </Target>
+    <Target Name="API:Clean">
+        <MSBuild Projects="src\Servidor\API.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="API:Make">
+        <MSBuild Projects="src\Servidor\API.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DesafioMicroData;API"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DesafioMicroData:Clean;API:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DesafioMicroData:Make;API:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

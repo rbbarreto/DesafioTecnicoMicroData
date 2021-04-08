@@ -1,0 +1,6 @@
+insert into contato (nome, data_nasc, telefone, id_cliente)
+values ('Ricardo', '2020-03-01', '5833-6363', 1)
+insert into contato (nome, data_nasc, telefone, id_cliente)
+values ('Ricardo Araujo', '1976-3-09', '5833-6565', 1)
+insert into contato (id, nome, data_nasc, telefone, id_cliente)
+values ('Renato', '1977-06-04', '5833-6969', 1)

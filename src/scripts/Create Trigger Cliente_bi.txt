@@ -1,0 +1,7 @@
+create trigger cliente_bi for cliente
+active before insert position 0
+as
+begin
+  if (new.id is null) then
+    new.id = gen_id(gen_cliente_id,1);
+end

@@ -1,0 +1,2 @@
+insert into cliente (nome, cep, logradouro, numero, complemento, cidade, ibge_cidade, siglas, ibge_uf)
+values ('Ricardo Araujo', '04943020', 'Rua Carvalheiras','3' , 'Casa 02', 'São Paulo', '3550308', 'SP', '35')
